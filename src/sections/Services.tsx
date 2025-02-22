@@ -28,11 +28,13 @@ const Services: React.FC<ServicesProps> = ({id, className}) => {
         <Element name={id} className={cn('flex flex-col items-center justify-center my-24 md:my-12 xl:my-0', className)}>
             <h3 className={'text-xl'}>What I offer</h3>
             <h2 className={'text-5xl mt-2'}>My services</h2>
-            <p className={'text-center mt-6 max-w-[90vw] sm:max-w-[80vw] md:max-w-[70vw] lg:max-w-[60vw] xl:max-w-[50vw] 2xl:max-w-[40vw]'}>
-                I&apos;m a fullstack android and web developer from Bihar, India with experience working at Physics
-                Wallah and several full-fledged applications.</p>
+            <p className={'text-center mt-6 max-w-[90vw] sm:max-w-[80vw] md:max-w-[70vw] lg:max-w-[60vw] xl:max-w-[50vw]'}>
+                I offer end-to-end development solutions, from designing interactive frontends to building scalable
+                backend systems. Whether you need a custom web app or mobile application, I ensure high performance,
+                security, and an intuitive user experience.
+            </p>
 
-            <div className={'grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 place-content-center gap-6 my-10 xl:my-24'}>
+            <div className={'grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 place-content-center gap-6 my-10 xl:my-20'}>
                 {serviceList.map((card, index) => (
                     <React.Fragment key={index}>
                         {renderServiceCard(card)}

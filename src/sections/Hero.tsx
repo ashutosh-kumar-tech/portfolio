@@ -22,6 +22,15 @@ const Hero: React.FC<HeroProps> = ({id, className}) => {
         });
     };
 
+    const handleCVDownload = () => {
+        const link = document.createElement("a");
+        link.href = "/files/ashutosh-CV.pdf"; // Replace with the actual path to your CV file in the public folder
+        link.download = "ashutosh-CV.pdf"; // Rename the file as needed
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
+
     return (
         <Element name={id} className={cn('flex flex-col items-center justify-center py-24', className)}>
             <div className={'relative w-40 aspect-square'}>
@@ -57,7 +66,7 @@ const Hero: React.FC<HeroProps> = ({id, className}) => {
                 <Button
                     text={'my resume'}
                     className={'border border-primary dark:bg-foreground dark:text-background'}
-                    onClick={() => {}}
+                    onClick={handleCVDownload}
                     icon={<FiDownload />}
                     iconPosition={"right"}
                 />
