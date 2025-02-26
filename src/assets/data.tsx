@@ -6,6 +6,7 @@ import {AndroidLogo, MongoDBLogo, PostgresLogo, TailwindLogo} from "@/assets/svg
 import {navLink} from "@/sections/Header";
 import {BsAndroid2} from "react-icons/bs";
 import {MdPhonelink} from "react-icons/md";
+import {project} from "@/sections/Work";
 
 export const navLinks: navLink[] = [
     { id: "top", label: "Home" },
@@ -63,3 +64,24 @@ export const serviceList: CardProps[] = [
         description: "I design responsive, modern, and fast interfaces using trends like Glassmorphism and dark mode, ensuring a great user experience."
     }
 ];
+
+export const projectList: project[] = [
+    {
+        title: "Restaurant app",
+        description: "mobile app",
+        image: "/images/restaurant-app.jpg",
+        link: "https://github.com/Ashcoder9752/LittleLemonApp"
+    },
+    {
+        title: "Travel & hotel site",
+        description: "web design",
+        image: "/images/travel-website.jpg",
+        link: "https://github.com/Ashcoder9752/wander-lust"
+    },
+    {
+        title: "Smart utility software",
+        description: "web design",
+        image: "/images/smart-utility-app.jpeg",
+        link: "https://github.com/Ashcoder9752/urban-ease"
+    }
+]

@@ -50,7 +50,7 @@ const Header: React.FC<HeaderProps> = ({className = ''}) => {
                 to={item.id}
                 spy={true}
                 smooth={true}
-                offset={-24}
+                offset={item.id == "work" ? -108 : -36}
                 className={'cursor-pointer'}
             >{item.label}</Link>
         </li>
@@ -115,7 +115,7 @@ const Header: React.FC<HeaderProps> = ({className = ''}) => {
 
                     <Button
                         text={'Contact'}
-                        className={'hidden md:flex border border-gray-500 font-outfit'}
+                        className={'hidden md:flex border border-gray-500 font-outfit  hover:bg-foreground/10 active:bg-foreground active:text-background'}
                         onClick={() => scrollToSection('contact')}
                         icon={<MdArrowOutward/>}
                         iconPosition={"right"}

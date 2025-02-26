@@ -30,7 +30,7 @@ export default function RootLayout({children}: Readonly<{ children: React.ReactN
     return (
         <html lang="en" suppressHydrationWarning>
         <body className={`${outfit.className} ${ovo.className} ${poppins.className} antialiased 
-            leading-8 overflow-x-hidden font-ovo bg-background dark:bg-background text-foreground dark:text-foreground`}>
+            leading-8 overflow-x-hidden font-ovo bg-background text-foreground`}>
         <ThemeProvider
             attribute={"class"}
             defaultTheme={"system"}

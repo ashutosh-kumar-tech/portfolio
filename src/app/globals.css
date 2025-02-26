@@ -77,3 +77,14 @@
     @apply bg-blue-100;
     background: radial-gradient(ellipse at center, #FBB6CE4A 0%, transparent 60%);
 }
+
+
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    }
+  body {
+    @apply bg-background text-foreground;
+    }
+}

@@ -58,14 +58,14 @@ const Hero: React.FC<HeroProps> = ({id, className}) => {
             <div className={'flex flex-col md:flex-row items-center justify-center mt-6 md:mt-8 xl:mt-10 gap-4 font-outfit'}>
                 <Button
                     text={'contact me'}
-                    className={'border border-primary dark:border-gray-200 bg-primary dark:bg-background text-background dark:text-foreground'}
-                    onClick={() => {scrollToSection('contact')}}
+                    className={'border border-foreground bg-foreground dark:bg-background text-background dark:text-foreground hover:bg-foreground/90 dark:hover:bg-foreground/10 active:bg-background dark:active:bg-foreground active:text-foreground dark:active:text-background'}
+                    onClick={() => scrollToSection('contact')}
                     icon={<FaArrowRight />}
                     iconPosition={"right"}
                 />
                 <Button
                     text={'my resume'}
-                    className={'border border-primary dark:bg-foreground dark:text-background'}
+                    className={'border border-foreground dark:bg-foreground dark:text-background hover:bg-foreground/10 dark:hover:bg-foreground/90 active:bg-foreground dark:active:bg-background active:text-background dark:active:text-foreground'}
                     onClick={handleCVDownload}
                     icon={<FiDownload />}
                     iconPosition={"right"}
