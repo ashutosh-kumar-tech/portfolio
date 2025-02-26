@@ -62,7 +62,7 @@ const Header: React.FC<HeaderProps> = ({className = ''}) => {
                 to={item.id}
                 spy={true}
                 smooth={true}
-                offset={-144}
+                offset={item.id === "contact" ? -64 :-144}
                 className={'cursor-pointer'}
                 onClick={closeMenu}
             >{item.label}</Link>
@@ -93,14 +93,7 @@ const Header: React.FC<HeaderProps> = ({className = ''}) => {
         >
             <div className={"radial-gradient h-[400px] w-full absolute -z-10 -top-44"}></div>
             <nav className={'flex items-center justify-between'}>
-                <Link
-                    to={'top'}
-                    spy={true}
-                    smooth={true}
-                    className={'mr-14 cursor-pointer'}
-                >
-                    <Logo className={'text-3xl py-1'}/>
-                </Link>
+                <Logo className={'text-3xl py-1 mr-14'}/>
 
                 <div>
                     <ul className={'hidden lg:flex gap-8 px-12 py-2.5 rounded-full bg-background dark:bg-background shadow-sm bg-opacity-50'}>
@@ -121,7 +114,7 @@ const Header: React.FC<HeaderProps> = ({className = ''}) => {
                         iconPosition={"right"}
                     />
 
-                    <CgMenuRightAlt onClick={openMenu} className={'text-2xl lg:hidden'}/>
+                    <CgMenuRightAlt onClick={openMenu} className={'text-2xl lg:hidden cursor-pointer'}/>
                 </div>
             </nav>
 
