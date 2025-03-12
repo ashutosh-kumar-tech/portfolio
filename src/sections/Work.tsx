@@ -9,6 +9,7 @@ import {CardBody, CardContainer, CardItem} from "@/components/ui/3d-card";
 import Image from "next/image";
 import Button from "@/components/Button";
 import {FaArrowRight} from "react-icons/fa6";
+import {motion} from "motion/react";
 
 interface WorkProps {
     id: string;
@@ -57,21 +58,41 @@ const Work: React.FC<WorkProps> = ({id, className}) => {
     )
     return (
         <Element name={id} className={cn('flex flex-col items-center justify-center my-24 md:my-12 xl:my-0', className)}>
-            <h3 className={'text-xl'}>My Portfolio</h3>
-            <h2 className={'text-5xl mt-2'}>My Latest Work</h2>
-            <p className={'text-center mt-6 max-w-[90vw] sm:max-w-[80vw] md:max-w-[70vw] lg:max-w-[60vw] xl:max-w-[50vw]'}>
+            <motion.h3
+                className={'text-xl'}
+                initial={{y: -20, opacity: 0}}
+                whileInView={{y: 0, opacity: 1}}
+                transition={{duration: 0.5, delay: 0.3}}
+            >My Portfolio</motion.h3>
+            <motion.h2
+                className={'text-5xl mt-2'}
+                initial={{y: -20, opacity: 0}}
+                whileInView={{y: 0, opacity: 1}}
+                transition={{duration: 0.5, delay: 0.5}}
+            >My Latest Work</motion.h2>
+            <motion.p
+                className={'text-center mt-6 max-w-[90vw] sm:max-w-[80vw] md:max-w-[70vw] lg:max-w-[60vw] xl:max-w-[50vw]'}
+                initial={{opacity: 0}}
+                whileInView={{opacity: 1}}
+                transition={{duration: 0.6, delay: 0.8}}
+            >
                 Welcome to my development portfolio! Explore a collection of projects showcasing my expertise in Android and
                 web development. From intuitive mobile apps to dynamic web solutions, I create seamless, scalable, and
                 user-friendly experiences.
-            </p>
+            </motion.p>
 
-            <div className={'flex flex-col md:flex-row flex-wrap items-center justify-center gap-12 px-10 my-12 md:my-16'}>
+            <motion.div
+                className={'flex flex-col md:flex-row flex-wrap items-center justify-center gap-12 px-10 my-12 md:my-16'}
+                initial={{y: -30, opacity: 0}}
+                whileInView={{y: 0, opacity: 1}}
+                transition={{duration: 0.6, delay: 1.2}}
+            >
                 {projectList.map((project: project, index: number) => (
                     <React.Fragment key={index}>
                         {renderProjectCard(project)}
                     </React.Fragment>
                 ))}
-            </div>
+            </motion.div>
 
             <Button
                 text={'View Github'}
@@ -79,6 +100,9 @@ const Work: React.FC<WorkProps> = ({id, className}) => {
                 onClick={handleClick}
                 icon={<FaArrowRight />}
                 iconPosition={"right"}
+                initial={{y: -20, opacity: 0}}
+                whileInView={{y: 0, opacity: 1}}
+                transition={{duration: 0.6, delay: 1}}
             />
         </Element>
     );

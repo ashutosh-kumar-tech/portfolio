@@ -1,7 +1,8 @@
 import React from 'react';
 import {cn} from "@/lib/utils";
+import {motion, HTMLMotionProps} from "motion/react";
 
-export interface CardProps {
+export interface CardProps extends HTMLMotionProps<"div"> {
     icon: React.ReactNode;
     title?: string;
     description?: string;
@@ -19,13 +20,17 @@ const Card: React.FC<CardProps> = (
         className,
         iconClassName,
         titleClassName,
-        descriptionClassName
+        descriptionClassName,
+        whileHover,
     }) => (
-    <div className={cn('flex flex-col p-6 rounded-3xl border dark:border-gray-700 font-outfit', className)}>
+    <motion.div
+        className={cn('flex flex-col p-6 rounded-3xl border dark:border-gray-700 font-outfit', className)}
+        whileHover={whileHover}
+    >
         <div className={iconClassName}>{icon}</div>
         {title && <h4 className={titleClassName}>{title}</h4>}
         {description && <p className={descriptionClassName}>{description}</p>}
-    </div>
+    </motion.div>
 );
 
 export default Card;

@@ -11,6 +11,7 @@ import {Input} from "@/components/ui/input";
 import {Textarea} from "@/components/ui/textarea";
 import {Button} from "@/components/ui/button";
 import {FaArrowRight} from "react-icons/fa6";
+import {motion} from "motion/react";
 
 interface ContactProps {
     id: string;
@@ -77,14 +78,35 @@ const Contact: React.FC<ContactProps> = ({id, className}) => {
 
     return (
         <Element name={id} className={cn('flex flex-col items-center justify-center my-24 md:my-12 xl:my-0', className)}>
-            <h3 className={'text-xl'}>Connect with me</h3>
-            <h2 className={'text-5xl mt-2'}>Get in Touch</h2>
-            <p className={'text-center mt-6 max-w-[90vw] sm:max-w-[80vw] md:max-w-[70vw] lg:max-w-[60vw] xl:max-w-[50vw]'}>
+            <motion.h3
+                className={'text-xl'}
+                initial={{y: -20, opacity: 0}}
+                whileInView={{y: 0, opacity: 1}}
+                transition={{duration: 0.5, delay: 0.3}}
+            >Connect with me</motion.h3>
+            <motion.h2
+                className={'text-5xl mt-2'}
+                initial={{y: -20, opacity: 0}}
+                whileInView={{y: 0, opacity: 1}}
+                transition={{duration: 0.5, delay: 0.5}}
+            >Get in Touch</motion.h2>
+            <motion.p
+                className={'text-center mt-6 max-w-[90vw] sm:max-w-[80vw] md:max-w-[70vw] lg:max-w-[60vw] xl:max-w-[50vw]'}
+                initial={{opacity: 0}}
+                whileInView={{opacity: 1}}
+                transition={{duration: 0.6, delay: 0.8}}
+            >
                 I'd love to hear from you! If you have any questions, comments or feedback, please use the form below.
-            </p>
+            </motion.p>
 
             <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className={'p-6 rounded-3xl font-outfit w-10/12 sm:w-9/12 md:w-8/12 lg:w-7/12 xl:w-6/12 mt-8'}>
+                <motion.form
+                    onSubmit={form.handleSubmit(onSubmit)}
+                    className={'p-6 rounded-3xl font-outfit w-10/12 sm:w-9/12 md:w-8/12 lg:w-7/12 xl:w-6/12 mt-8'}
+                    initial={{y: -30, opacity: 0}}
+                    whileInView={{y: 0, opacity: 1}}
+                    transition={{duration: 0.6, delay: 1.2}}
+                >
                     <div className={'grid grid-cols-1 lg:grid-cols-2 gap-6'}>
                         <FormField
                             control={form.control}
@@ -133,7 +155,7 @@ const Contact: React.FC<ContactProps> = ({id, className}) => {
                             <FaArrowRight />
                         </Button>
                     </div>
-                </form>
+                </motion.form>
             </Form>
         </Element>
     );
