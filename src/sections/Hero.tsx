@@ -41,7 +41,7 @@ const Hero: React.FC<HeroProps> = ({id, className}) => {
                 transition={{duration: 0.8, type: 'spring', stiffness: 100}}
             >
                 <Image
-                    src={'/ashutosh.jpeg'}
+                    src={'/images/ashutosh.jpeg'}
                     alt={'Ashutosh Kumar'}
                     fill
                     className={'object-cover rounded-full'}

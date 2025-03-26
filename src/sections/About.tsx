@@ -58,7 +58,7 @@ const About: React.FC<AboutProps> = ({id, className}) => {
                     transition={{duration: 0.6}}
                 >
                     <Image
-                        src={'/ashutosh.jpeg'}
+                        src={'/images/ashutosh.jpeg'}
                         alt={'Ashutosh Kumar'}
                         fill
                         className={'object-cover rounded-3xl'}
