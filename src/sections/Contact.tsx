@@ -71,8 +71,9 @@ const Contact: React.FC<ContactProps> = ({id, className}) => {
 
             setResult("Message sent successfully.");
             form.reset();
-        } catch (error: any) {
-            setResult(`Failed to send message ${error.message}`);
+        } catch (error) {
+            console.error(error);
+            setResult("Failed to send message");
         }
     }
 
