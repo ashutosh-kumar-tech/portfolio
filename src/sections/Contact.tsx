@@ -71,8 +71,8 @@ const Contact: React.FC<ContactProps> = ({id, className}) => {
 
             setResult("Message sent successfully.");
             form.reset();
-        } catch (error) {
-            setResult("Failed to send message");
+        } catch (error: any) {
+            setResult(`Failed to send message ${error.message}`);
         }
     }
 
@@ -96,7 +96,7 @@ const Contact: React.FC<ContactProps> = ({id, className}) => {
                 whileInView={{opacity: 1}}
                 transition={{duration: 0.6, delay: 0.8}}
             >
-                I'd love to hear from you! If you have any questions, comments or feedback, please use the form below.
+                I&apos;d love to hear from you! If you have any questions, comments or feedback, please use the form below.
             </motion.p>
 
             <Form {...form}>
