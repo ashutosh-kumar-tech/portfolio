@@ -58,7 +58,7 @@ const Hero: React.FC<HeroProps> = ({id, className}) => {
             </motion.h2>
 
             <motion.h1
-                className={'flex flex-col items-center text-3xl md:text-4xl xl:text-6xl my-3'}
+                className={'flex flex-col items-center text-center text-3xl md:text-4xl xl:text-6xl my-3'}
                 initial={{y: -30, opacity: 0}}
                 whileInView={{y: 0, opacity: 1}}
                 transition={{duration: 0.8, delay: 0.5}}
