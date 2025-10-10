@@ -23,4 +23,4 @@ jobs:
         run: vercel login --token ${{ secrets.VERCEL_TOKEN }}
 
       - name: Deploy to Vercel
-        run: vercel --prod --token ${{ secrets.VERCEL_TOKEN }}
+        run: vercel --prod --token ${{ secrets.VERCEL_TOKEN }} --confirm
