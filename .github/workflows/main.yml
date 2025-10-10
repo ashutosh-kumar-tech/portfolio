@@ -7,23 +7,44 @@ on:
     branches: [main]
 
 jobs:
-  ci-cd:
+  build:
+    name: Build
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version: 22
 
       - name: Install Dependencies
-        run: npm ci
+        uses: bahmutov/npm-install@v1
+        with:
+          cache: true  # optional, enables caching
 
       - name: Type Check
         run: npm run type-check
 
       - name: Run Build
         run: npm run build
+
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install Dependencies
+        uses: bahmutov/npm-install@v1
+        with:
+          cache: true  # optional, enables caching
 
       - name: Install Vercel CLI
         run: npm install -g vercel
