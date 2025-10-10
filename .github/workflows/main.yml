@@ -25,15 +25,6 @@ jobs:
       - name: Run Build
         run: npm run build
 
-      - name: List .next Directory
-        run: ls -la .next
-
-      - name: Upload Build Artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: build-artifacts
-          path: .next/**
-
       - name: Install Vercel CLI
         run: npm install -g vercel
 
