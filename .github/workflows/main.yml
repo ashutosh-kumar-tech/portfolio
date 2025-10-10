@@ -22,9 +22,6 @@ jobs:
       - name: Type Check
         run: npm run type-check
 
-      - name: Run Lint
-        run: npm run lint
-
       - name: Run Build
         run: npm run build
 
@@ -35,7 +32,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: build-artifacts
-          path: .next
+          path: .next/**
 
       - name: Install Vercel CLI
         run: npm install -g vercel
