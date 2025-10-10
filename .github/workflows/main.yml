@@ -22,11 +22,14 @@ jobs:
       - name: Type Check
         run: npm run type-check
 
+      - name: Run Lint
+        run: npm run lint
+
       - name: Run Build
         run: npm run build
 
-      - name: Run Lint
-        run: npm run lint
+      - name: List .next Directory
+        run: ls -la .next
 
       - name: Upload Build Artifacts
         uses: actions/upload-artifact@v4
