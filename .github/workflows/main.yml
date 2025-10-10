@@ -5,6 +5,7 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
+  workflow_dispatch:
 
 jobs:
   build:
@@ -24,13 +25,19 @@ jobs:
       - name: Type Check
         run: npm run type-check
 
-      - name: Run Build
+      - name: Lint
+        run: npm run lint
+
+      - name: Build
         run: npm run build
 
   deploy:
     name: Deploy
-    needs: build
+    needs: [build]
     runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: https://ashutoshkumar.tech
 
     steps:
       - uses: actions/checkout@v4
